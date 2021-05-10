@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mynotes.notes.UI.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_firstFragment2"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seondFragmnet"
+        android:name="com.mynotes.notes.UI.fragments.SeondFragmnet"
+        android:label="fragment_seond_fragmnet"
+        tools:layout="@layout/fragment_seond_fragmnet" >
+        <action
+            android:id="@+id/action_seondFragmnet_to_third_Fragment"
+            app:destination="@id/third_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.mynotes.notes.UI.fragments.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_seondFragmnet"
+            app:destination="@id/seondFragmnet" />
+    </fragment>
+    <fragment
+        android:id="@+id/third_Fragment"
+        android:name="com.mynotes.notes.UI.fragments.Third_Fragment"
+        android:label="fragment_third_"
+        tools:layout="@layout/fragment_third_" />
+</navigation>

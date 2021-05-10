@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myviewmodel"
+            type="com.mynotes.notes.Subscriber_ViewModel" />
+    </data>
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Roomdata_Demo">
+    <EditText
+        android:id="@+id/edt_name"
+        android:hint="Enter your name"
+        android:text="@={myviewmodel.inutname}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edt_email"
+        android:hint="Enter your email"
+        android:text="@={myviewmodel.emal}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_save"
+            android:text="@={myviewmodel.saveorUpdatebutton}"
+            android:onClick="@{()->myviewmodel.saveUpdate()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_delte"
+            android:text="@={myviewmodel.deleteButton}"
+            android:onClick="@{()->myviewmodel.deleteButton}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/room_recyecerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>
+</layout>

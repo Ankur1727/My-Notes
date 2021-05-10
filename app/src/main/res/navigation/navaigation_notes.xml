@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navaigation_notes"
+    app:startDestination="@id/add_Notes">
+
+    <fragment
+        android:id="@+id/add_Notes"
+        android:name="com.mynotes.notes.Add_Notes"
+        android:label="fragment_add__notes"
+        tools:layout="@layout/fragment_add__notes" >
+        <action
+            android:id="@+id/action_add_Notes_to_save_Notes"
+            app:destination="@id/save_Notes" />
+        <action
+            android:id="@+id/action_add_Notes_self"
+            app:destination="@id/add_Notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/save_Notes"
+        android:name="com.mynotes.notes.Save_Notes"
+        android:label="fragment_save__notes"
+        tools:layout="@layout/fragment_save__notes" >
+        <action
+            android:id="@+id/action_save_Notes_to_add_Notes"
+            app:destination="@id/add_Notes" />
+
+    </fragment>
+</navigation>
